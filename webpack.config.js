@@ -1,8 +1,8 @@
-const PUBLIC_PATH = require("path").join(__dirname, "public");
+const path  = require('path');
 const { initBackendStub } = require("./utils/backend-stub");
+const PUBLIC_PATH = path.join(__dirname, "public");
 
-module.exports = {
-  mode: "development",
+module.exports = (env, argv) => ({
   entry: "./src/index.js",
   output: {
     path: PUBLIC_PATH,
@@ -14,4 +14,4 @@ module.exports = {
     port: 9000,
     before: initBackendStub
   }
-};
+});

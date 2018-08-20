@@ -24,28 +24,34 @@ export function createChart(container, data, isActive) {
     type: "line",
     data: {
       labels: data.map((el, i) => getLabel(el, i)),
-      datasets: [{
-        data: data,
-        borderWidth: 1,
-        borderColor: borderColor,
-        backgroundColor: backgroundColor
-      }]
+      datasets: [
+        {
+          data: data,
+          borderWidth: 1,
+          borderColor: borderColor,
+          backgroundColor: backgroundColor
+        }
+      ]
     },
     options: {
       legend: {
         display: false
       },
       scales: {
-        xAxes: [{
-          ticks: {
-            display: false
+        xAxes: [
+          {
+            ticks: {
+              display: false
+            }
           }
-        }],
-        yAxes: [{
-          ticks: {
-            beginAtZero: true, min: 0
+        ],
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true, min: 0
+            }
           }
-        }]
+        ]
       }
     }
   });
